@@ -1,0 +1,203 @@
+// --- team section ---
+
+.team {
+    .wrapper {
+        margin-bottom: 30px;
+    }
+
+    &_header {
+        .title {
+            max-width: 615px;
+        }
+    }
+
+    &_main {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 40px;
+
+        &-text {
+            text-align: justify;
+            word-break: break-all;
+            margin: 30px 0;
+        }
+    }
+
+    &_quote {
+        padding: 30px;
+        background: radial-gradient(123.37% 123.37% at 5.3% 9.03%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 99.92%);
+        color: $black;
+
+        .main {
+            quotes: none;
+            @include archBold;
+            font-size: 18px;
+            line-height: 23px;
+            margin-bottom: 21px;
+            display: inline-block;
+        }
+
+        .secondary {
+            .quote-icon {
+                display: none;
+            }
+
+            .author {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .avatar {
+                    display: none;
+                }
+
+                .info {
+                    @include col;
+
+                    &_profession {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .team_quote {
+        padding: 60px;
+
+        .main {
+            font-size: 26px;
+            line-height: 31px;
+        }
+
+        .secondary {
+            font-size: 19px;
+            line-height: 28px;
+            @include flexBetween;
+
+            .author {
+                .avatar {
+                    display: block;
+                }
+
+                .info {
+                    width: calc(100% - 60px);
+                }
+            }
+
+            .quote-icon {
+                display: block;
+                width: 83px;
+                height: 73px;
+            }
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .team {
+        &_main {
+            font-size: 19px;
+            line-height: 28px;
+            margin-bottom: 40px;
+
+            &-text {
+                margin: 40px 0;
+            }
+        }
+
+        &_quote {
+            .author {
+                .avatar {
+                    width: 100px;
+                }
+
+                .info {
+                    width: calc(100% - 120px);
+                }
+            }
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .team {
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+        }
+
+        &_header {
+            margin: 0;
+        }
+
+        .video {
+            max-height: 600px;
+        }
+
+        &_main {
+            margin-bottom: 0;
+
+            &-text {
+                margin-top: 0;
+            }
+        }
+
+        &_quote {
+            @include col;
+            justify-content: center;
+            .secondary .author {
+                .avatar {
+                    display: none;
+                }
+
+                .info {
+                    width: 100%;
+                }
+            }
+        }
+
+        .content {
+            display: flex;
+            margin-top: 40px;
+            gap: 40px;
+
+            .team_main, .team_quote {
+                width: calc(50% - 20px);
+            }
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .team {
+        .content {
+            gap: 60px;
+            .team_main {
+                width: 600px;
+            }
+            .team_quote {
+                flex-grow: 1;
+                .secondary .author {
+                    .avatar {
+                        display: block;
+                    }
+
+                    .info {
+                        width: calc(100% - 120px);
+                    }
+                }
+            }
+        }
+    }
+}

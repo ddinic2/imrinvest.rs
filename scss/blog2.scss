@@ -1,0 +1,14 @@
+// --- base ---
+@import "base/base";
+@import "base/mixins";
+@import "base/variables";
+@import "base/keyframes";
+@import "global/global";
+@import "global/rtl";
+
+// --- page components ---
+@import "blocks/common/header";
+@import "blocks/blog/aside";
+@import "pages/blog2/main";
+@import "blocks/blog/pagination";
+@import "blocks/common/footer";

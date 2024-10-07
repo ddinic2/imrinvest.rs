@@ -1,0 +1,105 @@
+// --- about section ---
+
+.about {
+    &_header {
+        margin-bottom: 0;
+
+        .text {
+            margin: 30px 0 40px;
+        }
+
+        .achievements_item .icon * {
+            fill: $accent;
+        }
+
+        .btn {
+            margin: 40px 0 50px;
+        }
+    }
+
+    .media {
+        margin-top: 40px;
+        max-height: 460px;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .about .media {
+        margin-top: 60px;
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .about_header {
+        max-width: 520px;
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .about {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        &_header {
+            .title {
+                width: 526px;
+            }
+
+            .btn {
+                margin-top: 50px;
+                margin-bottom: 0;
+            }
+        }
+
+        .secondary {
+            @include col;
+            align-items: flex-end;
+
+            .media {
+                flex-grow: 1;
+                margin-top: 40px;
+            }
+
+            .numbers_list {
+                grid-template-columns: 1fr;
+                text-align: right;
+
+                .number {
+                    font-size: 80px;
+                    line-height: 80px;
+                }
+            }
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] .about .secondary .numbers_list {
+        text-align: left;
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .about {
+        .container {
+            gap: 140px;
+        }
+
+        .secondary .numbers_list {
+            grid-template-columns: repeat(2, 200px);
+            grid-gap: 60px;
+        }
+    }
+}

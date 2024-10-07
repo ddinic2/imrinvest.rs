@@ -1,0 +1,8 @@
+@import "../base/mixins";
+@include font-face("Archivo", "Archivo-Medium", 500);
+@include font-face("Archivo", "Archivo-SemiBold", 600);
+@include font-face("Archivo", "Archivo-Bold", 700);
+@include font-face("Archivo", "Archivo-ExtraBold", 800);
+@include font-face("Roboto", "Roboto-Regular", 400);
+@include font-face("Roboto", "Roboto-Medium", 500);
+@include font-face("Roboto", "Roboto-Bold", 700);

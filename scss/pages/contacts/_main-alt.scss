@@ -1,0 +1,54 @@
+// --- contacts info section ---
+
+.contact {
+    .container {
+        @include col;
+        gap: 50px;
+    }
+
+    &_header .text {
+        margin: 30px 0;
+
+    }
+
+    &_info {
+        margin-bottom: 30px;
+    }
+
+    .secondary {
+        background-color: #F8F8F8;
+        padding: 30px;
+    }
+}
+
+// --- media queries ---
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .contact_info {
+        margin-bottom: 40px;
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .contact {
+        .container {
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 60px;
+        }
+
+        &_header {
+            max-width: 630px;
+
+            .text {
+                margin: 20px 0 30px;
+            }
+        }
+
+        .secondary {
+            padding: 60px;
+        }
+    }
+}

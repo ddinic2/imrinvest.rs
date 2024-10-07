@@ -1,0 +1,296 @@
+// --- footer component ---
+
+.footer {
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    &_main {
+        @include col;
+        gap: 40px;
+
+        &-block {
+            &_title, .brand {
+                margin-bottom: 20px;
+            }
+
+            &_form {
+                margin-top: 20px;
+
+                .field, .btn {
+                    width: 100%;
+                }
+
+                .field {
+                    &:focus {
+                        border-color: $accent;
+                    }
+                }
+
+                .btn {
+                    .icon {
+                        display: none;
+                    }
+
+                    &:hover, &:focus {
+                        background: lighten($accent, 10%);
+                    }
+                }
+            }
+
+            .group-wrapper {
+                display: flex;
+                gap: 10px;
+
+                &:first-of-type {
+                    margin-bottom: 15px;
+                }
+
+                .icon {
+                    color: $accent;
+                    font-size: 18px;
+                    margin-top: 5px;
+                }
+
+                .group {
+                    @include col;
+                    line-height: 23px;
+
+                    a, span {
+                        display: inline-block;
+                    }
+
+                    a {
+                        transition: opacity .3s ease-in-out;
+
+                        &:hover, &:focus {
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+
+            &_nav {
+                @include col;
+                gap: 15px;
+
+                .list-item {
+                    .link {
+                        display: inline-flex;
+                        align-items: center;
+                        @include archSemi;
+                        font-size: 14px;
+                        line-height: 1;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        gap: 5px;
+
+                        &.current {
+                            color: $accent;
+                        }
+
+                        .icon {
+                            font-size: 10px;
+                            color: $accent;
+                            transition: .3s ease-in-out;
+                        }
+
+                        &:hover, &:focus {
+                            .icon {
+                                color: $secondary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &_secondary {
+        border-top: 1px solid $gray;
+        margin-top: 60px;
+        padding-top: 60px;
+
+        &-copyright {
+            text-align: center;
+            margin: 0 0 40px;
+
+            span {
+                display: inline-block;
+            }
+        }
+
+        .socials {
+            justify-content: center;
+
+            &_item-link {
+                background: $accent;
+                color: $primary;
+            }
+        }
+    }
+}
+
+// --- RTL ---
+
+html[dir="rtl"] {
+    .footer_main-block_nav .list-item .link {
+        .icon {
+            transform: scaleX(-1);
+        }
+    }
+}
+
+// --- media queries ---
+
+// xs mobile landscape
+@media screen and (min-width: 567.98px) {
+    .footer {
+        &_main {
+            &-block {
+                &_subtitle {
+                    max-width: 450px;
+                }
+
+                &_form {
+                    display: flex;
+
+                    .field {
+                        margin-bottom: 0;
+                    }
+
+                    .btn {
+                        width: auto;
+                    }
+                }
+
+                .group-wrapper {
+                    display: inline-flex;
+
+                    &:first-of-type {
+                        margin-bottom: 0;
+                        margin-right: 30px;
+                    }
+                }
+
+                &_nav {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 40px;
+                }
+            }
+        }
+
+        &_secondary {
+            @include flexBetween;
+
+            &-copyright {
+                margin: 0;
+                text-align: unset;
+            }
+        }
+    }
+
+    // --- RTL ---
+    html[dir="rtl"] {
+        .footer_main-block .group-wrapper:first-of-type {
+            margin-right: 0;
+            margin-left: 30px;
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .footer {
+        &_main {
+            padding-bottom: 80px;
+            flex-flow: row wrap;
+            gap: 40px 80px;
+
+            &-block {
+                width: calc(50% - 40px);
+
+                &:nth-of-type(3) {
+                    order: 4;
+                }
+
+                .group-wrapper {
+                    display: flex;
+
+                    &:first-of-type {
+                        margin-right: 0;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                &_nav {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                &_form {
+                    margin-top: 40px;
+
+                    .btn {
+                        width: 54px !important;
+                        padding: 0;
+                        .text {
+                            display: none;
+                        }
+
+                        .icon {
+                            display: inline-block;
+                        }
+                    }
+
+                    .field {
+                        width: calc(100% - 54px);
+                    }
+                }
+            }
+        }
+
+        &_secondary {
+            margin: 0;
+            padding-top: 60px;
+
+            &-copyright {
+                max-width: 350px;
+            }
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .footer {
+        &_main {
+            &-block {
+                width: fit-content;
+
+                &:first-of-type {
+                    max-width: 280px;
+                }
+
+                &:nth-of-type(3) {
+                    order: unset;
+                }
+            }
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1199.98px) {
+    .footer {
+        &_main {
+            justify-content: space-between;
+
+            &-block {
+                &:last-of-type {
+                    max-width: 330px;
+                }
+            }
+        }
+    }
+}

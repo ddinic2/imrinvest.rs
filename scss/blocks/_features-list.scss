@@ -1,0 +1,124 @@
+// --- features list component ---
+
+.features {
+    &_content {
+        display: grid;
+        grid-gap: 30px;
+        & + .video {
+            margin-top: 60px;
+            max-height: 580px;
+        }
+    }
+
+    &_header {
+        .title {
+            margin-bottom: 30px;
+        }
+
+        .checklist {
+            margin-bottom: 10px;
+            &_item .icon {
+                color: $secondary;
+            }
+        }
+    }
+
+    &_card {
+        cursor: pointer;
+
+        .wrapper {
+            height: 100%;
+            border: 1px solid #fff;
+            transition: border-color .3s ease-in-out;
+            padding: 30px;
+
+            &:hover {
+                border-color: $accent;
+            }
+        }
+
+        &-title {
+            margin: 30px 0 20px;
+        }
+
+        &-icon {
+            * {
+                fill: $accent;
+            }
+        }
+
+        &--alt {
+            .wrapper {
+                border-color: $gray;
+
+                &:hover {
+                    border-color: $primary;
+                }
+            }
+
+            .features_card-icon * {
+                fill: $primary;
+            }
+
+            .features_card-description {
+                color: $primary;
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// xs mobile landscape
+@media screen and (min-width: 567.98px) {
+    .features_card {
+        &-title {
+            max-width: 330px;
+        }
+
+        &-description {
+            max-width: 380px;
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .features {
+        &_content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &_header-list {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// small tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .features_card {
+        &-title, &-description {
+            max-width: 350px;
+        }
+
+        .wrapper {
+            padding: 50px;
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .features {
+        &_content {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &_card {
+            &-title, &-description {
+                max-width: unset;
+            }
+        }
+    }
+}

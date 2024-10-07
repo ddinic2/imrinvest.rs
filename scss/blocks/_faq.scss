@@ -1,0 +1,128 @@
+// --- FAQ section component ---
+
+.faq {
+    &_header .text {
+        color: #162739;
+    }
+
+    &_accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &-item {
+            .trigger, .content {
+                border: $card;
+                transition: border-color .3s ease-in-out;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .trigger {
+                @include flexBetween();
+                text-align: left;
+                gap: 20px;
+
+                &[aria-expanded="true"] {
+                    color: $secondary;
+                    border-color: $secondary;
+                    border-bottom-color: transparent;
+                    padding-bottom: 0;
+
+                    .icon .icon-plus {
+                        opacity: 0;
+                    }
+                }
+
+                .icon {
+                    width: 18px;
+                    height: 18px;
+                    font-size: 18px;
+                    position: relative;
+
+                    & * {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        transition: opacity .3s ease-in-out;
+                    }
+                }
+            }
+
+            .content {
+                border-top: none;
+                padding-top: 0;
+
+                .text {
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+            }
+
+            .collapse.show .content {
+                border-color: $secondary;
+            }
+        }
+    }
+}
+
+// --- RTL ---
+html[dir="rtl"] {
+    .faq_accordion-item .trigger {
+        text-align: right;
+    }
+}
+
+// --- media queries ---
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .faq_accordion {
+        .trigger .question {
+            font-size: 26px;
+            line-height: 1.2;
+
+        }
+
+        .content .text {
+            font-size: 19px;
+            line-height: 28px;
+        }
+
+        .content, .trigger {
+            padding: 30px;
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .faq {
+        .container {
+            display: flex;
+            gap: 60px;
+        }
+
+        &_header {
+            margin: 150px 0 0;
+        }
+
+        &_header, &_accordion {
+            width: calc(50% - 30px);
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .faq {
+        .container {
+            gap: 80px;
+        }
+
+        &_accordion {
+            width: 740px;
+        }
+    }
+}

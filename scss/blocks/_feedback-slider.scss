@@ -1,0 +1,134 @@
+// --- feedback section ---
+
+.feedback {
+    &_header {
+        color: #000810;
+        margin-bottom: 40px;
+
+        .text {
+            margin: 20px 0 30px;
+            color: #202C38;
+        }
+    }
+
+    &_slider {
+        margin-top: 30px;
+        @include col;
+        gap: 20px;
+
+        &-slide {
+            height: auto;
+            border: $card;
+            padding: 30px;
+            @include col;
+            gap: 30px;
+
+            .main {
+                color: #000810;
+                flex-grow: 1;
+            }
+
+            .media {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .avatar {
+                    display: none;
+                }
+
+                &_info {
+                    font-family: $accentFont;
+
+                    .name {
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                        font-size: 18px;
+                        line-height: 23px;
+                        color: #000810;
+                    }
+
+                    .company {
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: $blackalt;
+                    }
+
+                    .name, .company {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .feedback_slider-slide {
+        .media {
+            .avatar {
+                display: block;
+                width: 60px !important;
+            }
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .feedback_slider {
+        gap: 30px;
+
+        &-slide {
+            padding: 40px;
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .feedback {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            &.reverse {
+                flex-direction: row-reverse;
+            }
+        }
+
+        &_header {
+            width: 490px;
+        }
+
+        &_slider {
+            width: calc(100% - 550px);
+            gap: 50px;
+            max-width: 630px;
+
+            &-slide {
+                padding: 60px;
+            }
+
+            .swiper-pagination {
+                justify-content: flex-start;
+                margin-left: 11px;
+            }
+        }
+
+        &_header, &_slider {
+            margin: 0;
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] .feedback_slider .swiper-pagination {
+        margin-left: 0;
+        margin-right: 11px;
+    }
+}

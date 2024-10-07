@@ -1,0 +1,17 @@
+// --- base ---
+@import "base/base";
+@import "base/mixins";
+@import "base/variables";
+@import "base/keyframes";
+@import "global/global";
+@import "global/rtl";
+@import "../css/progress-tracker.css";
+
+// --- page components ---
+@import "blocks/common/header";
+@import "pages/single_service/tabs";
+@import "blocks/process";
+@import "blocks/faq";
+@import "blocks/services-list";
+@import "blocks/reviews";
+@import "blocks/common/footer";

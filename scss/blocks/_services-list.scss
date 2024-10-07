@@ -1,0 +1,90 @@
+// --- services section ---
+
+.services_list {
+    display: grid;
+    grid-gap: 30px;
+
+    &-item {
+        .services_header .text {
+            color: #162739;
+        }
+
+        .wrapper {
+            border: $card;
+            padding: 30px;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                border-color: $secondary;
+            }
+
+            .number {
+                color: $lightgray;
+                @include archExtra;
+                font-size: 36px;
+                line-height: 40px;
+            }
+
+            .title {
+                margin: 20px 0;
+            }
+
+            .description {
+                margin-bottom: 40px;
+                color: $blackalt;
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// xs mobile landscape
+@media screen and (min-width: 567.98px) {
+    .services_list-item {
+        .wrapper {
+            padding: 40px;
+        }
+
+        .number {
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .services_list {
+        grid-template-columns: repeat(2, 1fr);
+
+        &-item .wrapper {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+
+            .description {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .services_list-item .wrapper {
+        padding: 40px;
+
+        .number {
+            font-size: 48px;
+            line-height: 55px;
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .services_list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

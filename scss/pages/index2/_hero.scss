@@ -1,0 +1,158 @@
+// --- hero section ---
+
+.hero {
+    position: relative;
+    padding: 170px 0 50px;
+    background-image: url('../img/placeholder.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .6s ease-in-out;
+
+    &_overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary, .7);
+        top: 0;
+        left: 0;
+    }
+
+    .section_header {
+        margin-bottom: 15px;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: $accent;
+        &:after {
+            border-color: $accent;
+        }
+    }
+
+    &_slider {
+        &--main {
+            margin-bottom: 40px;
+
+            .service .text {
+                margin: 20px 0 30px;
+            }
+        }
+
+        &--thumbs {
+            margin-top: 70px;
+
+            .thumb {
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                height: 230px;
+                display: flex;
+
+                &:after {
+                    content: '';
+                    z-index: 2;
+                    @include cover;
+                    background: rgba($primary, .4);
+                    transition: all .3s ease-in-out;
+                }
+
+                .title {
+                    position: absolute;
+                    z-index: 3;
+                    max-width: 213px;
+                    transition: all .3s ease-in-out;
+                    bottom: 40px;
+                    left: 40px;
+                }
+
+                .media {
+                    position: relative;
+                    z-index: 1;
+                    height: auto;
+                    width: 100%;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                &.swiper-slide-thumb-active,
+                &:hover {
+                    .title {
+                        color: $black;
+                    }
+
+                    &:after {
+                        background: rgba(#fff, .4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- RTL ---
+html[dir="rtl"] .hero_slider--thumbs .thumb .title {
+    right: 40px;
+    left: auto;
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .hero .swiper-pagination {
+        justify-content: flex-start;
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .hero {
+        &_main {
+            @include flexBetween;
+            gap: 60px;
+            .swiper-pagination {
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+                flex-grow: 1;
+                align-items: flex-end;
+            }
+        }
+        &_slider {
+            &--main {
+                max-width: 680px;
+            }
+            &--thumbs {
+                margin-top: 100px;
+            }
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .hero {
+        padding: 315px 0 60px;
+        &_slider {
+            &--main .service .text {
+                margin: 30px 0 50px;
+            }
+            &--thumbs {
+                margin-top: 170px;
+            }
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1365.98px) {
+    .hero {
+        .container_thumbs {
+            max-width: unset;
+        }
+        &_slider--thumbs .thumb {
+            width: 410px;
+        }
+    }
+}

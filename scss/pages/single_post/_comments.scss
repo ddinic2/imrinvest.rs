@@ -1,0 +1,101 @@
+// --- comments section ---
+
+.post_comments {
+    margin: 80px 0;
+
+    .title {
+        color: #000;
+        @include archExtra;
+        margin-bottom: 30px;
+    }
+
+    .list {
+        @include col;
+        gap: 30px;
+
+        &-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+
+            &[data-type="reply"] {
+                margin-left: 40px;
+            }
+
+            .comment {
+                width: calc(100% - 60px);
+
+                &_panel {
+                    font-family: $accentFont;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+                    @include flexBetween;
+                    flex-wrap: wrap;
+                    gap: 10px 20px;
+
+                    .metadata {
+                        width: 100%;
+                    }
+
+                    &-name {
+                        font-weight: 600;
+                    }
+
+                    &-action {
+                        text-transform: uppercase;
+                        color: $secondary;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- RTl ---
+html[dir="rtl"] .post_comments .list-item[data-type="reply"] {
+    margin-left: 0;
+    margin-right: 40px;
+}
+
+// --- media queries ---
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .post_comments {
+        .title {
+            margin-bottom: 40px;
+        }
+
+        .list {
+            gap: 40px;
+
+            &-item {
+                &[data-type="reply"] {
+                    margin-left: 80px;
+                }
+
+                .comment {
+                    width: calc(100% - 80px);
+
+                    &_panel {
+                        line-height: 1;
+
+                        .metadata {
+                            width: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // --- RTl ---
+    html[dir="rtl"] .post_comments .list-item[data-type="reply"] {
+        margin-left: 0;
+        margin-right: 80px;
+    }
+}

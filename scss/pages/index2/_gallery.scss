@@ -1,0 +1,21 @@
+// --- gallery section ---
+
+.gallery_item .overlay_label {
+    display: none;
+}
+
+// --- media queries ---
+
+// small tablet
+@media screen and (min-width: 767.98px){
+    .gallery_item .media .overlay {
+        padding: 20px;
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px){
+    .gallery_item .media .overlay {
+        padding: 40px;
+    }
+}

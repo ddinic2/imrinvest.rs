@@ -1,0 +1,296 @@
+// --- tabs section ---
+
+.tabs {
+    &_nav {
+        display: none;
+    }
+
+    &_content {
+        @include col;
+        gap: 20px;
+
+        &-item {
+            .trigger, .content {
+                border: $card;
+                transition: border-color .3s ease-in-out;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .trigger {
+                cursor: pointer;
+
+                &[aria-expanded="true"] {
+                    color: $secondary;
+                    border-color: $secondary;
+                    border-bottom-color: transparent;
+                    padding-bottom: 0 !important;
+                }
+            }
+
+            .content {
+                border-top: none;
+                padding-top: 0 !important;
+            }
+
+            .collapse.show .content {
+                border-color: $secondary;
+            }
+
+            .tab-pane {
+                transition: height .3s ease-in-out !important;
+                opacity: 1 !important;
+            }
+
+            .media {
+                display: none;
+            }
+
+            .main,
+            .main .info,
+            .main .description {
+                @include col;
+            }
+
+            .main {
+                padding-top: 20px;
+                gap: 15px;
+
+                .info {
+                    order: 1;
+                    gap: 10px;
+
+                    &_table {
+                        .value {
+                            @include archBold;
+                            text-transform: uppercase;
+                            text-align: right;
+                        }
+                    }
+                }
+
+                .description {
+                    gap: 15px;
+                }
+            }
+        }
+    }
+}
+
+// --- RTL ---
+html[dir="rtl"] {
+    .tabs_content-item .main .info_table .value {
+        text-align: left;
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .tabs {
+        &_content {
+            gap: 30px;
+
+            &-item {
+                .trigger, .content {
+                    padding: 30px;
+                }
+
+                .content .main .info {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 30px;
+
+                    &_table {
+                        flex-grow: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .tabs {
+        &_header {
+            max-width: 525px;
+        }
+
+        &_nav-item, &_content-item .trigger {
+            font-size: 26px;
+            line-height: 1.2;
+        }
+
+        &_content-item {
+            .content {
+                .media {
+                    display: block;
+                    padding-top: 30px;
+                    aspect-ratio: 77 / 37;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .main {
+                    padding-top: 30px;
+
+                    .description {
+                        gap: 20px;
+                    }
+
+                    .info {
+                        order: unset;
+
+                        &_table {
+                            flex-grow: unset;
+
+                            .property {
+                                width: 95px;
+                            }
+
+                            .value {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] {
+        .tabs_content-item .main .info_table .value {
+            text-align: right;
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .tabs {
+        &_header {
+            max-width: unset;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+
+            &-wrapper {
+                width: 490px;
+            }
+
+            .text {
+                margin: 0;
+                width: calc(100% - 530px);
+                max-width: 525px;
+            }
+        }
+
+        &_services {
+            display: flex;
+            align-items: stretch;
+        }
+
+        &_nav {
+            @include col;
+            width: 400px;
+            height: auto;
+
+            &-item {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                padding: 30px;
+                border-left: $card;
+                border-bottom: $card;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    height: 0;
+                    top: 0;
+                    left: 0;
+                    width: 2px;
+                    background-color: $secondary;
+                    transition: height .3s ease-in-out;
+                }
+
+                &.active:after {
+                    height: 100%;
+                }
+
+                &:first-of-type {
+                    border-top: $card;
+                }
+            }
+        }
+
+        &_content {
+            width: calc(100% - 400px);
+            gap: 0;
+            border: $card;
+
+            &-item {
+                .trigger {
+                    display: none;
+                }
+                .content {
+                    border: none;
+                    padding: 0;
+                    .media {
+                        padding: 0;
+                        margin-left: -1px;
+                    }
+                    .main {
+                        padding: 30px;
+                        gap: 30px;
+                    }
+                }
+            }
+
+            .tab-pane {
+                opacity: 1;
+                transition: opacity .3s ease-in-out !important;
+
+                &:not(.show) {
+                    opacity: 0 !important;
+                }
+            }
+        }
+    }
+
+    // --- RTL ---
+    html[dir="rtl"] {
+        .tabs_nav-item {
+            border-left: none;
+            border-right: $card;
+
+            &:after {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .tabs {
+        &_nav {
+            width: 520px;
+            &-item {
+                padding: 30px 50px;
+            }
+        }
+        &_content {
+            width: calc(100% - 520px);
+        }
+    }
+}

@@ -1,0 +1,15 @@
+// --- base ---
+@import "base/base";
+@import "base/mixins";
+@import "base/variables";
+@import "base/keyframes";
+@import "global/global";
+@import "global/rtl";
+
+// --- page components ---
+@import "blocks/common/header";
+@import "blocks/feedback-form";
+@import "blocks/contact-data";
+@import "pages/contacts/main-alt";
+@import "pages/contacts/map";
+@import "blocks/common/footer";

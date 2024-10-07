@@ -1,0 +1,101 @@
+// --- reviews section ---
+
+.reviews {
+    &_header {
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    &_slider {
+        margin-top: 30px;
+
+        &-slide {
+            background: #F8F8F8;
+            padding: 30px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+
+            .main {
+                margin: 30px 0;
+                flex-grow: 1;
+            }
+
+            .media {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                font-family: $accentFont;
+
+                &_info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    line-height: 1;
+
+                    .name {
+                        font-weight: 600;
+                        font-size: 18px;
+                    }
+
+                    .details {
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        color: $blackalt;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// xs mobile landscape
+@media screen and (min-width: 567.98px) {
+    .reviews_slider-slide {
+        padding: 30px;
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .reviews {
+        &_header {
+            margin-bottom: 0;
+            &-wrapper {
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: space-between;
+            }
+        }
+
+        &_slider {
+            margin-top: 40px;
+            &-slide {
+                padding: 40px;
+                .media_info {
+                    gap: 10px;
+                }
+            }
+        }
+    }
+}
+
+// small tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .reviews_slider-slide {
+        padding: 60px 40px 60px 60px;
+    }
+
+    // --- RTL ---
+    html[dir="rtl"] {
+        .reviews_slider-slide {
+            padding: 60px 60px 60px 40px;
+        }
+    }
+}

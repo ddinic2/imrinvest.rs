@@ -1,0 +1,39 @@
+// --- blog content ---
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .blog_feed-item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        .main_text {
+            border: none;
+        }
+        .media {
+            aspect-ratio: unset;
+            height: 100%;
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .blog_feed {
+        grid-template-columns: 1fr;
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .blog_feed-item {
+        grid-template-columns: 410px calc(100% - 440px);
+        .media {
+            height: 280px;
+        }
+    }
+}

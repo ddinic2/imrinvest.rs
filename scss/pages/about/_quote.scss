@@ -1,0 +1,70 @@
+//  --- quote section ---
+
+.quote {
+    &_header {
+        margin-bottom: 0;
+        position: relative;
+
+        .author, .title, .subtitle {
+            position: relative;
+            z-index: 2;
+        }
+
+        .author {
+            text-transform: uppercase;
+            color: $accent;
+            display: inline-block;
+            margin-top: 40px;
+        }
+
+        &-icon {
+            -webkit-animation: rotate-center 2s ease-in-out infinite both;
+            animation: rotate-center 2s ease-in-out infinite both;
+            position: absolute;
+            z-index: 1;
+            top: -10%;
+            left: 0;
+        }
+    }
+}
+
+// --- RTL ---
+html[dir="rtl"] .quote_header-icon {
+    left: auto;
+    right: 0;
+}
+
+// --- media queries ---
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .quote {
+        &_header {
+            &-icon {
+                top: -66px;
+            }
+
+            .title {
+                font-size: 48px;
+                line-height: 1.1;
+            }
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1365.98px) {
+    .quote {
+        &_header {
+            &-icon {
+                top: -66px;
+                left: -80px;
+            }
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] .quote_header-icon {
+        left: auto;
+        right: -80px;
+    }
+}

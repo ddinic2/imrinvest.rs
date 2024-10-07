@@ -1,0 +1,140 @@
+// --- about section component ---
+
+.about {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .media {
+        aspect-ratio: 66 / 69;
+        overflow: hidden;
+        flex-grow: 1;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .main {
+        .checklist {
+            font-weight: 500;
+            margin-bottom: 30px;
+
+            .icon {
+                margin: 0;
+            }
+        }
+
+        .skills {
+            text-transform: uppercase;
+
+            &_item {
+                gap: 10px !important;
+
+                .label {
+                    font-size: 18px;
+                    line-height: 23px;
+                }
+
+                .progressLine {
+                    svg {
+                        max-height: 15px;
+                    }
+
+                    .progress-text {
+                        top: -35px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .skills,
+        .skills_item {
+            display: flex;
+            flex-direction: column;
+            font-weight: 500;
+            gap: 20px;
+        }
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .about {
+        .media {
+            display: none;
+        }
+
+        .main .skills_item {
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+
+            .label {
+                width: 150px;
+            }
+
+            .progressLine {
+                padding-right: 70px;
+                flex-grow: 1;
+
+                .progress-text {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] {
+        .about .main .skills_item .progressLine {
+            padding-right: 0;
+            padding-left: 70px;
+        }
+    }
+}
+
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .about .main {
+        max-width: 520px;
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .about {
+        .container {
+            flex-direction: row;
+            align-items: center;
+            gap: 60px;
+        }
+
+        &.revert .container {
+            flex-direction: row-reverse;
+        }
+
+        .media {
+            display: block;
+            align-self: stretch;
+            height: auto;
+        }
+
+        .main .skills {
+            gap: 30px;
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .about .container {
+        gap: 120px;
+    }
+}

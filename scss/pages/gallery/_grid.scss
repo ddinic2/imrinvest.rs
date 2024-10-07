@@ -1,0 +1,32 @@
+// --- gallery grid ---
+
+.gallery_grid {
+    display: grid;
+    grid-gap: 30px;
+    &-item {
+        max-height: 470px;
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .gallery_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .gallery_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .gallery_grid-item_trigger .overlay {
+        padding: 40px;
+    }
+}

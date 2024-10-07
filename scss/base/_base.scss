@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, input, button, textarea {
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+textarea {
+    resize: none;
+}
+
+img, video {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+// hide unnecessary google maps elements
+
+a[href^="http://maps.google.com/maps"] {
+    display: none !important
+}
+
+a[href^="https://maps.google.com/maps"] {
+    display: none !important
+}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display: none;
+}
+
+.gmnoprint div {
+    background: none !important;
+}
+
+.sticky-spacer {
+    display: none !important;
+}

@@ -1,0 +1,22 @@
+
+.highlight {
+    color: #3ca5c7;
+}
+.link-arrow{
+    color: #3ca5c7;
+}
+/* .section_header .subtitle:before{
+    color: #3ca5c7;
+} */
+.features_header .checklist_item .icon {
+    color: #3ca5c7;
+}
+
+.faq_accordion-item .trigger[aria-expanded=true] {
+    color: #3ca5c7;
+    border-color: #3ca5c7 #3ca5c7 transparent;
+}
+
+.contact-info_group .content .link:focus,.contact-info_group .content .link:hover {
+    color: #3ca5c7
+}

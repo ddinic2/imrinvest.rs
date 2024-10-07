@@ -1,0 +1,10 @@
+// --- latest posts section ---
+
+// --- media queries ---
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .blog_feed {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

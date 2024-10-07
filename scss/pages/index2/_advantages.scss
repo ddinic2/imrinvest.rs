@@ -1,0 +1,106 @@
+// --- advantages section ---
+
+.advantages {
+    &_header {
+        .numbers_list {
+            margin: 30px 0 40px;
+            padding: 40px;
+            background: #F8F8F8;
+            width: 100%;
+
+            &-item {
+                .number {
+                    color: $secondary;
+                }
+
+                .label {
+                    width: 100%;
+                    display: block;
+                    color: $blackalt;
+                }
+            }
+        }
+    }
+
+    .main {
+        @include col;
+        gap: 40px;
+
+        &_list {
+            @include col;
+            gap: 30px;
+
+            &-item {
+                display: flex;
+                gap: 20px;
+
+                .number {
+                    color: #C8C8C8;
+                    @include archExtra;
+                }
+
+                .title {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .advantages_header .numbers_list-item .label {
+        max-width: 170px;
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .advantages {
+        .container {
+            display: flex;
+            gap: 60px;
+        }
+        &_header {
+            margin-bottom: 0;
+            width: 520px;
+            .numbers_list {
+                margin: 40px 0 0;
+                padding: 60px;
+            }
+        }
+        .main {
+            width: calc(100% - 580px);
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .advantages {
+        .container {
+            align-items: flex-end;
+        }
+        &_header {
+            width: 600px;
+            .numbers_list {
+                padding: 80px;
+            }
+        }
+        .main {
+            width: calc(100% - 660px);
+            &_text {
+                max-width: 480px;
+            }
+            &_list {
+                max-width: 515px;
+                gap: 40px;
+                .title {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

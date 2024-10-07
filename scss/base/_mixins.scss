@@ -1,0 +1,59 @@
+@mixin font-face($name, $file, $weight, $style: normal) {
+    @font-face {
+        font-family: "#{$name}";
+        src: url('../fonts/#{$name}/#{$file}.woff2') format('woff2'),
+        url('../fonts/#{$name}/#{$file}.woff') format('woff');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin col() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexBetween() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin archExtra() {
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+}
+
+@mixin archBold() {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+}
+
+@mixin archSemi() {
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+}
+
+@mixin cover() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

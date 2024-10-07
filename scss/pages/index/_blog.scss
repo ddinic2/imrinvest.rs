@@ -1,0 +1,48 @@
+// --- blog section ---
+
+.blog {
+    &_header {
+        margin-bottom: 0;
+    }
+
+    &_btn {
+        margin: 30px 0 40px;
+        width: 100%;
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .blog_btn {
+        width: unset;
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .blog {
+        &_btn {
+            margin: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            display: block !important;
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .blog_feed {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

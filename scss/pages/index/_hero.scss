@@ -1,0 +1,306 @@
+// --- hero section ---
+
+.hero {
+    padding: 100px 0 0;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        padding-bottom: 200px;
+        position: relative;
+    }
+
+    &_deco {
+        display: none;
+    }
+
+    &_media {
+        position: absolute;
+        right: -50%;
+        bottom: -25%;
+        max-height: 50%;
+        max-width: 860px;
+    }
+
+    &_header {
+        position: relative;
+        z-index: 100;
+
+        .title {
+            @include archExtra;
+        }
+
+        .text {
+            text-shadow: 0 0 5px $primary;
+        }
+    }
+
+    &_main {
+        position: relative;
+
+        .card {
+            display: none;
+        }
+
+        .numbers {
+            margin: 15px 0;
+            @include col;
+            gap: 30px;
+
+            &_group {
+                .number {
+                    @include archBold;
+                    color: $accent;
+                }
+
+                .label {
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .hero {
+        &_deco {
+            position: absolute;
+            display: block;
+            opacity: 0.5;
+            transform: rotate(154deg);
+            max-width: 50%;
+            bottom: -10%;
+            left: -10%;
+        }
+
+        &_media {
+            right: -50%;
+            max-height: 65%;
+        }
+
+        &_main .card {
+            display: block;
+            background: radial-gradient(97.35% 239.81% at 1.55% 6.12%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.52) 100%);
+            backdrop-filter: blur(80px);
+            overflow: hidden;
+            color: $black;
+            max-width: 388px;
+            margin: 30px auto 0 0;
+
+            &_underlay {
+                @include cover;
+                background: radial-gradient(97.35% 239.81% at 1.55% 6.12%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.52) 100%);
+                z-index: -1;
+            }
+
+            .wrapper {
+                padding: 20px;
+            }
+
+            img {
+                position: absolute;
+                transform: rotate(2deg);
+                right: -14%;
+                top: 30%;
+                max-height: 210px;
+                height: 100%;
+                width: auto;
+            }
+
+            .info, .square {
+                display: block;
+            }
+
+            .square {
+                @include archExtra;
+                font-size: 28px;
+                line-height: 32px;
+                margin: 15px 0 5px;
+
+                sup {
+                    font-size: 16px;
+                    position: relative;
+                    bottom: 2px;
+                }
+            }
+
+            .info {
+                font-weight: 500;
+            }
+
+            .link-arrow {
+                margin-top: 30px;
+            }
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] {
+        .hero_main .card {
+            margin: 30px 0 0 auto;
+
+            img {
+                right: auto;
+                left: -14%;
+            }
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .hero {
+        padding: 200px 0 0;
+
+        .container {
+            padding-bottom: 130px;
+        }
+
+        &_header {
+            max-width: 550px;
+        }
+
+        &_media {
+            right: 0;
+            max-height: 60%;
+            bottom: -25%;
+        }
+
+        &_main {
+            display: flex;
+            justify-content: space-between;
+
+            .numbers, .card {
+                margin: 0;
+            }
+
+            .card {
+                flex-grow: 1;
+
+                .wrapper {
+                    padding: 30px;
+                }
+
+                img {
+                    right: -25%;
+                }
+            }
+        }
+    }
+
+    // --- RTL ---
+    html[dir="rtl"] {
+        .hero_main .card {
+            margin: 0;
+
+            img {
+                right: auto;
+                left: -25%;
+            }
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .hero {
+        &_deco {
+            bottom: -20%;
+        }
+
+        &_media {
+            right: 4%;
+            max-height: 70%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        &_header {
+            margin: 0;
+        }
+
+        &_main {
+            flex-grow: 1;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 120px;
+
+            .numbers {
+                text-align: right;
+
+                .label {
+                    line-height: 25px;
+                }
+            }
+
+            .card {
+                width: 100%;
+
+                .wrapper {
+                    padding: 40px;
+                }
+
+                .square {
+                    font-size: 36px;
+                    line-height: 40px;
+                }
+
+                .info {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] {
+        .hero_main .numbers {
+            text-align: left;
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .hero {
+        padding: 280px 0 0;
+
+        &_deco {
+            max-width: 60%;
+            left: -15%;
+            bottom: -35%;
+        }
+
+        &_media {
+            right: 0;
+            max-height: unset;
+            height: 800px;
+        }
+
+        &_header .text {
+            max-width: 470px;
+        }
+
+        &_main {
+            gap: 190px;
+            .numbers {
+                gap: 60px;
+            }
+        }
+    }
+
+    // --- RTL ---
+    html[dir="rtl"] {
+        .hero_media {
+            right: auto;
+            left: 200px;
+        }
+    }
+}

@@ -1,0 +1,209 @@
+// --- single project main content ---
+
+.about {
+    padding-bottom: 80px;
+
+    &_article {
+        .media {
+            margin-bottom: 30px;
+            height: 220px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &-header {
+            margin-bottom: 20px;
+            margin-top: 30px;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+
+        .checklist {
+            margin-top: 27px;
+        }
+
+        &-text, .checklist {
+            color: $blackalt;
+        }
+    }
+
+    &_aside {
+        margin-top: 30px;
+
+        .wrapper {
+            height: 100%;
+            padding: 30px;
+
+            &--helper {
+                width: 100%;
+            }
+        }
+    }
+
+    &_info {
+        margin-bottom: 30px;
+
+        .wrapper {
+            border: 1px solid #C8C8C8;
+            width: 100%;
+        }
+
+        &-title {
+            margin-bottom: 30px;
+        }
+
+        &-table {
+            width: 100%;
+
+            &_row {
+                .property {
+                    color: #162739;
+                }
+
+                .value {
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    line-height: 23px;
+                    @include archSemi;
+                    margin-bottom: 20px;
+                }
+
+                .property, .value {
+                    width: 100%;
+                    display: block;
+                    text-align: left;
+                }
+            }
+        }
+
+        .link {
+            margin-top: 10px;
+            @include archSemi;
+        }
+    }
+
+    &_contact {
+        order: 3;
+
+        &-title, .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .socials_item-link {
+            background-color: $accent;
+            color: $primary;
+        }
+    }
+}
+
+// --- RTL ---
+html[dir="rtl"] .about_info-table_row {
+    .property, .value {
+        text-align: right;
+    }
+}
+
+// --- media queries ---
+
+// mobile xs landscape
+@media screen and (min-width: 567.98px) {
+    .about {
+        &_aside {
+            .wrapper {
+                padding: 40px;
+            }
+        }
+
+        &_info {
+            &-table {
+                &_row {
+                    padding-bottom: 35px;
+                    display: table;
+                    width: 100%;
+
+                    .property, .value {
+                        width: unset;
+                        display: table-cell;
+                        text-align: unset;
+                    }
+
+                    .value {
+                        text-align: right;
+                    }
+                }
+            }
+
+            .link {
+                margin-top: 10px;
+                @include archSemi;
+            }
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] .about_info-table_row {
+        .value {
+            text-align: left;
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .about {
+        &_article .media {
+            height: 430px;
+        }
+
+        &_aside {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            align-items: stretch;
+            margin-top: 60px;
+
+            &-item {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .about {
+        &_content {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        &_aside {
+            grid-template-columns: 1fr;
+            width: 410px;
+            margin-top: 0;
+            align-items: start;
+            grid-gap: 60px;
+        }
+
+        &_article {
+            width: calc(100% - 450px);
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .about {
+        &_content {
+            gap: 60px;
+        }
+
+        &_article-header {
+            margin-top: 40px;
+        }
+    }
+}

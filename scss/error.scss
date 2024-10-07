@@ -1,0 +1,103 @@
+// --- base ---
+@import "base/base";
+@import "base/mixins";
+@import "base/variables";
+@import "base/keyframes";
+@import "global/global";
+@import "global/rtl";
+
+// --- page 404 ---
+
+.error {
+    background: url("../img/placeholder.jpg") no-repeat bottom right;
+    background-size: cover;
+    min-height: 100vh;
+
+    .container {
+        padding-top: 40px;
+    }
+
+    &_number {
+        @include archExtra;
+        font-size: 120px;
+        line-height: 1;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    &_message {
+        &-header {
+            .subtitle {
+                text-transform: uppercase;
+                @include archSemi;
+                padding-left: 60px;
+                position: relative;
+                margin-bottom: 12px;
+                display: inline-block;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    height: 2px;
+                    width: 40px;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: $accent;
+                }
+            }
+        }
+        &-text {
+            margin: 18px 0 30px;
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+// --- media queries ---
+
+// xs mobile landscape
+@media screen and (min-width: 567.98px) {
+    .error {
+        &_message {
+            max-width: 230px;
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px){
+    .error {
+        .container {
+            padding-top: 120px;
+        }
+        &_number {
+            font-size: 200px;
+        }
+        &_message {
+            .btn {
+                width: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+// small tablet landscape
+@media screen and (min-width: 1023.98px){
+    .error {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .container {
+            padding-top:0;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        &_number {
+            font-size: 320px;
+            margin-bottom: 0;
+        }
+    }
+}

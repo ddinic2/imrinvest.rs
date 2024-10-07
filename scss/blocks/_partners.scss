@@ -1,0 +1,35 @@
+// --- partners section ---
+
+.partners {
+    &_grid {
+        display: grid;
+        grid-gap: 30px;
+
+        &-card {
+            border: $card;
+            padding: 51px 0;
+
+            .media {
+                max-height: 123px;
+                width: auto;
+                margin: auto;
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .partners_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .partners_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

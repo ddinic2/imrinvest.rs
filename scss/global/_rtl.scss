@@ -1,0 +1,89 @@
+// --- global template styles RTL ---
+
+html[dir="rtl"] {
+    .page {
+        .breadcrumbs_item:after {
+            left: -58px;
+            right: unset;
+        }
+        .media {
+            right: unset !important;
+            left: -10%;
+        }
+    }
+
+    .section_header .subtitle {
+        padding-left: 0;
+        padding-right: 60px;
+
+        &:before {
+            left: unset;
+            right: 0;
+        }
+
+        &--extended:before {
+            right: unset;
+            left: calc(100% - 40px);
+        }
+    }
+
+    .link {
+        &-arrow {
+            .icon {
+                transform: scaleX(-1);
+                margin-left: 0 !important;
+                margin-right: 10px;
+            }
+
+            &:hover, &:focus {
+                .icon {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    input[type="checkbox"] + label .icon {
+        margin-right: 0;
+        margin-left: 20px;
+    }
+
+    .swiper-controls .swiper-button .icon {
+        transform: scaleX(-1);
+    }
+
+    #scrollTrigger {
+        right: unset;
+        left: 12px;
+    }
+}
+
+// --- media queries ---
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    html[dir="rtl"] .page .media {
+        left: -18%;
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    html[dir="rtl"] {
+        .page .media {
+            left: 200px;
+        }
+
+        #scrollTrigger {
+            right: auto;
+            left: 40px;
+        }
+    }
+}
+
+@media screen and (min-width: 1365.98px) {
+    html[dir="rtl"] #scrollTrigger {
+        right: auto;
+        left: 30px;
+    }
+}

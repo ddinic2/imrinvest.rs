@@ -1,0 +1,147 @@
+// --- services section ---
+
+.services {
+    &_slider {
+        &-slide {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: auto;
+
+            .media {
+                height: 220px;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .main {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+
+                .title {
+                    margin-bottom: 20px;
+                }
+
+                .list {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    gap: 14px;
+                    margin: 30px 0 40px;
+                }
+
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-pagination {
+            margin-top: 30px;
+        }
+    }
+}
+
+// --- media queries ---
+
+// xs mobile landscape
+@media screen and (min-width: 567.98px) {
+    .services_slider {
+        &-slide {
+            .media {
+                aspect-ratio: unset;
+                height: 240px;
+            }
+
+            .main .btn {
+                width: fit-content;
+            }
+        }
+
+        &-pagination {
+            justify-content: flex-start;
+            margin-left: 8px;
+        }
+    }
+    // --- RTL ---
+    html[dir="rtl"] .services_slider {
+        &-pagination {
+            margin-right: 8px;
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .services {
+        &_header {
+            margin-bottom: 40px;
+        }
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        &_slider {
+
+            &-slide {
+                flex-direction: row;
+                background-color: #fff;
+
+                .media {
+                    display: none;
+                }
+            }
+
+            &-pagination {
+                flex-direction: column !important;
+                justify-content: center;
+                margin: 0;
+                height: 100%;
+            }
+        }
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .services {
+        &_slider-slide {
+            align-items: center;
+            gap: 40px;
+
+            .media {
+                display: block;
+                height: 530px;
+                min-width: 400px;
+            }
+
+            .main {
+                width: calc(100% - 440px);
+            }
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .services_slider {
+        &-slide {
+            gap: 60px;
+
+            .media {
+                width: 600px;
+            }
+
+            .main {
+                width: calc(100% - 660px);
+            }
+        }
+    }
+}

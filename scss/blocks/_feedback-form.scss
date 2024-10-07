@@ -1,0 +1,62 @@
+// --- feedback (contact) form components ---
+
+.contact-form {
+    &_field, &_btn {
+        width: 100%;
+    }
+
+    &_field {
+        font-size: inherit;
+        line-height: inherit;
+        padding: 17px 20px;
+        border: 1px solid $gray;
+        margin-bottom: 30px;
+        color: $blackalt;
+        transition: all .3s ease-in-out;
+
+        &[data-type="message"] {
+            margin-bottom: 0;
+            min-height: 164px;
+        }
+
+        &::placeholder {
+            font-size: inherit;
+            line-height: inherit;
+            color: $gray;
+            transition: opacity .3s ease-in-out;
+        }
+
+        &:focus {
+            border-color: $blackalt;
+
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+
+    }
+
+    &_btn {
+        margin-top: 40px;
+    }
+}
+
+// --- media queries ---
+
+// xs mobile landscape
+@media screen and (min-width: 567.98px) {
+    .contact-form {
+        &_field {
+            &--half {
+                width: calc(50% - 15px);
+            }
+        }
+    }
+}
+
+// small tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .contact_form-header {
+        max-width: 370px;
+    }
+}

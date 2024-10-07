@@ -1,0 +1,145 @@
+// --- team main content ---
+
+$cardBorder: 1px solid #C8C8C8;
+
+.team_list {
+    display: grid;
+    grid-gap: 30px;
+
+    &-item {
+        .media {
+            height: 320px;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .main {
+            border: $cardBorder;
+            border-top: none;
+            padding: 30px;
+            text-align: center;
+
+            &_name {
+                margin-bottom: 10px;
+            }
+
+            &_position {
+                font-weight: 600;
+                color: $secondary;
+            }
+
+            &_text {
+                margin: 15px 0 20px;
+            }
+
+            .socials {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+// --- media queries ---
+
+// xs mobile landscape
+
+@media screen and (min-width: 567.98px) {
+    .team_list-item {
+        display: flex;
+
+        .media {
+            width: 200px;
+            height: 100%;
+        }
+
+        .main {
+            width: calc(100% - 200px);
+            text-align: left;
+            border-left: none;
+            border-top: $cardBorder;
+            @include col;
+            justify-content: center;
+            &_text {
+                max-width: 330px;
+            }
+
+            .socials {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // --- RTL version ---
+    html[dir="rtl"] {
+        .team_list-item {
+            .main {
+                text-align: right;
+                border-right: none;
+                border-left: $cardBorder;
+            }
+        }
+    }
+}
+
+// small tablet
+@media screen and (min-width: 767.98px) {
+    .team_list {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: stretch;
+
+        &-item {
+            flex-direction: column;
+            height: 100%;
+
+            .media, .main {
+                width: 100%;
+            }
+
+            .media {
+                height: 330px;
+            }
+
+            .main {
+                border-top: none;
+                border-left: $cardBorder;
+                flex-grow: 1;
+                &_text {
+                    max-width: 250px;
+                }
+            }
+        }
+    }
+
+    // --- RTL version ---
+    html[dir="rtl"] {
+        .team_list-item {
+            .main {
+                border-right: $cardBorder;
+            }
+        }
+    }
+}
+
+// larger tablet
+@media screen and (min-width: 819.98px) {
+    .team_list-item .main_text {
+        max-width: 360px;
+    }
+}
+
+// tablet landscape
+@media screen and (min-width: 1023.98px) {
+    .team_list-item .media {
+        height: 440px;
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px) {
+    .team_list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

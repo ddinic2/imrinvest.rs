@@ -1,0 +1,45 @@
+// --- feedback (contact) section ---
+
+.contact {
+    &_form {
+        &-header {
+            margin-bottom: 30px;
+        }
+    }
+    &_info {
+        margin-top: 60px;
+        &-header {
+            max-width: 340px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+// --- media queries ---
+
+// small tablet landscape
+@media screen and (min-width: 1023.98px){
+    .contact {
+        .container {
+            display: flex;
+            align-items: flex-end;
+            gap: 60px;
+        }
+        &_info {
+            margin-top: 0;
+            &-header {
+                margin-bottom: 40px;
+            }
+            .socials {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1279.98px){
+    .contact .container {
+        gap: 140px;
+    }
+}
