@@ -20,3 +20,7 @@
 .contact-info_group .content .link:focus,.contact-info_group .content .link:hover {
     color: #3ca5c7
 }
+
+.checklist_item .icon {
+    color: #3ca5c7;
+}
