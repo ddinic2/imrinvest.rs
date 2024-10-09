@@ -11,7 +11,7 @@ export default function initMap(containerSelector) {
         version: "weekly",
     });
     const mapContainer = document.querySelector(containerSelector);
-    const defaultMarker = { lat: 40.74881584652125, lng: -73.98561648634562 };
+    const defaultMarker = { lat: 44.77497, lng: 20.45574 };
 
     if (mapContainer) {
         loader.load().then(() => {
@@ -23,7 +23,7 @@ export default function initMap(containerSelector) {
             };
 
             const map = new google.maps.Map(mapContainer, {
-                center: { lat: 40.74956081164776, lng: -73.98700531672688 },
+                center: { lat: 44.77497, lng: 20.45574 },
                 zoom: 12,
                 styles: [...mapNightTheme],
                 disableDefaultUI: true

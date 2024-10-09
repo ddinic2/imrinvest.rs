@@ -24,3 +24,7 @@
 .checklist_item .icon {
     color: #3ca5c7;
 }
+.tabs_nav-item:after{
+    background-color: #3ca5c7;
+} 
+        

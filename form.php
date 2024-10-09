@@ -7,6 +7,7 @@
 	$senderTel = isset( $_POST['feedbackTel'] ) ? preg_replace( "/[^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$]/", "", $_POST['feedbackTel'] ) : "";
 	$message = isset( $_POST['feedbackMessage'] ) ? preg_replace( "/(From:|To:|BCC:|CC:|Subject:|Content-Type:)/", "", $_POST['feedbackMessage'] ) : "";
 
+	echo('send')
 	//Headers
 	$to = "ddinic2@gmail.com";
     $subject = 'Contact Us';
